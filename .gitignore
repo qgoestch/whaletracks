@@ -3,4 +3,4 @@
 
 # Exclude build files
 whaletracks.egg-info/
-*/__pycache__/
+*__pycache__/
