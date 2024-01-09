@@ -1,0 +1,6 @@
+# Exclude .csv files
+*.csv
+
+# Exclude build files
+whaletracks.egg-info/
+*/__pycache__/
