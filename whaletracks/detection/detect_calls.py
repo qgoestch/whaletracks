@@ -227,8 +227,7 @@ def xcorr(t,f,Sxx,tvec,fvec,BlueKernel,plotflag=True,scale_func=defaultScaleFunc
         t1=min(t)
         t2=max(t)
 #plot timeseries on upper axis
-        plt.figure(PLT_SCORE, figsize=(9, 3))
-        fig, (ax0, ax1) = plt.subplots(nrows=2,sharex=True)
+        fig, (ax0, ax1) = plt.subplots(nrows=2, sharex=True, num=PLT_SCORE)
         ax0.plot(t_scale,CorrVal_scale) #plot normalized detection scores as a time series.
         
         ax0.set_xlim([t1, t2]) #look at only positive values
@@ -456,7 +455,7 @@ def get_snr(analyzer_j,t,f,Sxx,utcstart_chunk,snr_limits=[14, 16],snr_calllength
 
     med_noise = np.median(Sxx_sub)
     utc_t = [utcstart_chunk + j for j in t]   
-    snr_t_int=np.int((snr_calllength/2)/(utc_t[1] - utc_t[0]))
+    snr_t_int=int((snr_calllength/2)/(utc_t[1] - utc_t[0]))
 
     for utc_time in peak_times:
         
@@ -476,7 +475,7 @@ def get_snr(analyzer_j,t,f,Sxx,utcstart_chunk,snr_limits=[14, 16],snr_calllength
 
     #Get SNR of 5 seconds of noise preceding call
     start_times=analyzer_j.df['start_time'].to_list()
-    noise_t_int=np.int((dur/2)/(utc_t[1] - utc_t[0]))
+    noise_t_int=int((dur/2)/(utc_t[1] - utc_t[0]))
     start_snr=[]
     for utc_time in start_times:
         
@@ -490,7 +489,7 @@ def get_snr(analyzer_j,t,f,Sxx,utcstart_chunk,snr_limits=[14, 16],snr_calllength
 
     #Get SNR of 3 seconds after call
     #end_times=analyzer_j.df['end_time'].to_list()
-    #noise_t_int=np.int((dur)/(utc_t[1] - utc_t[0]))
+    #noise_t_int=int((dur)/(utc_t[1] - utc_t[0]))
     #end_snr=[]
     #for utc_time in end_times: 
         #t_peak_ind = utc_t.index(utc_time) 

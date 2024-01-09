@@ -304,8 +304,10 @@ def main(STARTTIME, ENDTIME,
             
             #Make detection kernel
             [tvec, fvec, BlueKernel, freq_inds]=detect.buildkernel(f0, f1, bdwdth, dur, f, t, tr_filt.stats.sampling_rate, plotflag=False, kernel_lims=detect.finKernelLims)
-            
-            import pdb; pdb.set_trace()
+
+
+            # Python debugging tool:
+            # import pdb; pdb.set_trace()
             #subset spectrogram to be in same frequency range as kernel
             Sxx_sub=Sxx[freq_inds,:][0]
             f_sub=f[freq_inds]

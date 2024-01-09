@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import os.path
 import codecs
 
@@ -40,16 +40,12 @@ setup(
        'Programming Language :: Python :: 3.7',
        'Operating System :: OS Independent',
     ],
-    install_requires=[
-        'pandas',
-        'numpy~=1.16', 
+    install_requires=find_packages(include=['pandas',
+        'numpy', 
         'scipy',
         'nose',
         'obspy',
         'notebook',
-        'matplotlib',
-        'homebrew',
-        'git-lfs',
-    ],
+        'matplotlib']),
     python_requires='>=3.6',
 )
