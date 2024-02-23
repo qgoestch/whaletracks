@@ -4,3 +4,5 @@
 # Exclude build files
 whaletracks.egg-info/
 *__pycache__/
+
+# Exclude virtual environnement 
