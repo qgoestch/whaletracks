@@ -6,3 +6,4 @@ whaletracks.egg-info/
 *__pycache__/
 
 # Exclude virtual environnement 
+venv/
