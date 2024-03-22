@@ -300,10 +300,10 @@ def main(STARTTIME, ENDTIME,
                 
              
             #Make spectrogram
-            [f,t,Sxx]=detect.plotwav(tr_filt.stats.sampling_rate, tr_filt.data, window_size=window_size, overlap=overlap, plotflag=False,filt_freqlim=freqlim,ylim=freqlim)
+            [f,t,Sxx]=detect.plotwav(tr_filt.stats.sampling_rate, tr_filt.data, window_size=window_size, overlap=overlap, plotflag=True,filt_freqlim=freqlim,ylim=freqlim)
             
             #Make detection kernel
-            [tvec, fvec, BlueKernel, freq_inds]=detect.buildkernel(f0, f1, bdwdth, dur, f, t, tr_filt.stats.sampling_rate, plotflag=False, kernel_lims=detect.finKernelLims)
+            [tvec, fvec, BlueKernel, freq_inds]=detect.buildkernel(f0, f1, bdwdth, dur, f, t, tr_filt.stats.sampling_rate, plotflag=True, kernel_lims=detect.finKernelLims)
 
 
             # Python debugging tool:
